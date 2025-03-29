@@ -7,10 +7,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// Root command
 var rootCmd = &cobra.Command{
 	Use:   "sharingan",
-	Short: "Sharingan CLI fetches live sports scores",
-	Long:  `A CLI tool for fetching live scores, past matches, and team stats for different sports.`,
+	Short: "A CLI tool for fetching live scores, past matches, and team stats for different sports.",
+	Long:  `Sharingan is a CLI tool for retrieving real-time and past match data for football and other sports.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Use 'sharingan help' to see available commands")
 	},
@@ -24,6 +25,9 @@ func Execute() {
 	}
 }
 
+// Initialize commands
 func init() {
 	rootCmd.AddCommand(liveCmd)
+	rootCmd.AddCommand(pastCmd)
+	rootCmd.AddCommand(teamCmd)
 }
