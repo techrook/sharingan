@@ -1,6 +1,5 @@
 /*
 Copyright © 2025 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
@@ -13,13 +12,20 @@ import (
 // pastCmd represents the past command
 var pastCmd = &cobra.Command{
 	Use:   "past",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Fetch past football match results",
+	Long: `The 'past' command retrieves scores of previously played football matches. 
+It supports fetching all past matches or filtering by specific leagues and dates.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+Examples:
+  # Get all past football match results
+  sharingan past
+
+  # Get past results for the English Premier League (EPL)
+  sharingan past --league EPL
+
+  # Get past results from a specific date (YYYY-MM-DD)
+  sharingan past --date 2024-03-20
+`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("past called")
 	},
