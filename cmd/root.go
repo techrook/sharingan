@@ -25,9 +25,32 @@ func Execute() {
 	}
 }
 
+// Common variables used across commands
+var (
+	league    string
+	date      string
+	team      string
+	dateRange int
+	detailed  bool
+	format    string
+)
+
 // Initialize commands
 func init() {
-	rootCmd.AddCommand(liveCmd)
-	rootCmd.AddCommand(pastCmd)
-	rootCmd.AddCommand(teamCmd)
+	// Commands are added in their respective files
+}
+
+// Helper functions
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func defaultIfEmpty(value, defaultValue string) string {
+	if value == "" {
+		return defaultValue
+	}
+	return value
 }
